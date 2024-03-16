@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="mt-4">
+        <label for="firstName" class="ml-2">First Name: </label>
+        <input type="text" id="firstName" [(ngModel)]="firstName">
+      
+        <label for="lastName" class="ml-2">Last Name: </label>
+        <input type="text" id="lastName" [(ngModel)]="lastName">
+        <h6 class="ml-2">How should we contact you?</h6>
+        <div class="row">
+          <label for="Choose" class="ml-4 size">Choose option : </label>
+          <select id="Choose" [(ngModel)]="selectany" (change)="toggleControls()">
+      
+            <option value="phone">Phone</option>
+            <option value="email">Email</option>
+          </select>
+      
+          <div *ngIf="selectany === 'phone'">
+            <label for="phoneNumber" class="ml-5">Phone Number: </label>
+            <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber">
+          </div>
+      
+          <div *ngIf="selectany === 'email'">
+            <label for="emailAddress" class="ml-2">Email Address: </label>
+            <input type="email" id="emailAddress" [(ngModel)]="emailAddress">
+          </div>
+        </div>
+      </div>
+      
+</div>
